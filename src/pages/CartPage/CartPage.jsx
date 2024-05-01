@@ -1,5 +1,5 @@
 const CartPage = () => {
-  return <div></div>;
+  return <div>CART PAGE CONTENT</div>;
 };
 
 export default CartPage;
