@@ -3,7 +3,7 @@ import CartIcon from "../CartIcon/CartIcon";
 
 const Header = () => {
   return (
-    <header>
+    <header style={{ backgroundColor: "cornflowerblue" }}>
       (LOGO)
       <nav>
         <Link to="home">Home</Link>
