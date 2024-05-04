@@ -6,7 +6,7 @@ const ShopItem = ({ item }) => {
   const { image, title, price, description } = item;
 
   const handleQuantityOnChange = (e) => {
-    console.log(e);
+    setQuantity(e.target.value);
   };
 
   return (
@@ -14,12 +14,16 @@ const ShopItem = ({ item }) => {
       <img src={image} />
       <p>{title}</p>
       <p>description: {description}</p>
-      <input
-        id="quantity"
-        type="number"
-        value={quantity}
-        onChange={handleQuantityOnChange}
-      />
+      <label>
+        Quantity:
+        <input
+          id="quantity"
+          type="number"
+          value={quantity}
+          onChange={handleQuantityOnChange}
+        />
+      </label>
+
       <p>${price}</p>
       <button>Add to Cart</button>
     </div>
