@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const ShopItem = ({ item }) => {
   const [quantity, setQuantity] = useState(1);
@@ -23,6 +24,15 @@ const ShopItem = ({ item }) => {
       <button>Add to Cart</button>
     </div>
   );
+};
+
+ShopItem.propTypes = {
+  item: PropTypes.shape({
+    image: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    description: PropTypes.string.isRequired,
+  }),
 };
 
 export default ShopItem;
