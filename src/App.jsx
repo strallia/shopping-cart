@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const App = () => {
   const [itemsData, setItemsData] = useState(null);
   const [hasFetchError, setHasFetchError] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/category/jewelery")
@@ -13,13 +14,14 @@ const App = () => {
         return res.json();
       })
       .then((json) => setItemsData(json))
-      .catch((error) => setHasFetchError(error));
+      .catch((error) => setHasFetchError(error))
+      .finally(() => setLoading(false));
   }, []);
 
   return (
     <div>
       <Header />
-      <Outlet context={{ itemsData, hasFetchError }} />
+      <Outlet context={{ itemsData, hasFetchError, loading }} />
     </div>
   );
 };
