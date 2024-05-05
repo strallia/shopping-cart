@@ -29,7 +29,13 @@ const ShopItem = ({ item, setItemsData, isForShopPage = false }) => {
     setAddendQuantity(1);
   };
 
-  const handleDeleteItemClick = () => {};
+  const handleRemoveFromCartClick = () => {
+    setItemsData((items) => {
+      return items.map((item) =>
+        item.id === id ? { ...item, quantity: 0 } : item
+      );
+    });
+  };
 
   return (
     <div>
@@ -54,7 +60,7 @@ const ShopItem = ({ item, setItemsData, isForShopPage = false }) => {
       {isForShopPage ? (
         <button onClick={handleAddToCartClick}>Add to Cart</button>
       ) : (
-        <button onClick={handleDeleteItemClick}>Delete</button>
+        <button onClick={handleRemoveFromCartClick}>Remove</button>
       )}
     </div>
   );
