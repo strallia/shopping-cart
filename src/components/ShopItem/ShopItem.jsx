@@ -32,6 +32,7 @@ const ShopItem = ({ item, setItemsData }) => {
           id="quantity"
           type="number"
           value={quantityAddendValue}
+          min="1"
           onChange={handleQuantityOnChange}
         />
       </label>
