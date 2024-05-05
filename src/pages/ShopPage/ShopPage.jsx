@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import ShopItem from "../../components/ShopItem/ShopItem";
+import styles from "./ShopPage.module.css";
 
 const ShopPage = () => {
   const { itemsData, setItemsData, hasFetchError, loading } =
@@ -9,7 +10,7 @@ const ShopPage = () => {
   if (hasFetchError) return <p>fetch error, oh no!</p>;
 
   return (
-    <div>
+    <div className={styles.container}>
       {itemsData.map((item) => (
         <ShopItem
           key={item.id}

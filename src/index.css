@@ -7,8 +7,9 @@
 :root {
   font-family: sans-serif;
   font-size: 16px;
-}
-
-img {
-  width: 100px;
+  --light-purple: rgb(165, 101, 225);
+  --dark-purple: rgb(111, 17, 199);
+  --orange: rgb(244, 178, 85);
+  --pale-yellow: rgb(255, 237, 189);
+  --green: rgb(172, 240, 172);
 }

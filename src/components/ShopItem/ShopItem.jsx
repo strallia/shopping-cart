@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import styles from "./ShopItem.module.css";
 
 const ShopItem = ({ item, setItemsData, isForShopPage = false }) => {
   const [addendQuantity, setAddendQuantity] = useState(1);
@@ -34,30 +35,44 @@ const ShopItem = ({ item, setItemsData, isForShopPage = false }) => {
   };
 
   return (
-    <div>
-      <img src={image} />
-      <p>{title}</p>
-      {isForShopPage && <p>description: {description}</p>}
-      <label>
-        Quantity:
-        <input
-          id={id}
-          className={isForShopPage ? "addend-quantity" : "total-quantity"}
-          type="number"
-          value={isForShopPage ? addendQuantity : totalQuantity}
-          min="1"
-          onChange={
-            isForShopPage
-              ? handleAddendQuantityOnChange
-              : handleTotalQuantityOnChange
-          }
-        />
-      </label>
-      <p>${price}</p>
+    <div className={styles.container}>
+      <img src={image} className={styles.image} />
+      <p className={styles.title}>{title}</p>
+      {isForShopPage && <p className={styles.description}>{description}</p>}
+      <div className={styles.priceQuantityContainer}>
+        <p className={styles.price}>$ {price}</p>
+        <label className={styles.quantityLabel}>
+          Quantity:
+          <input
+            id={id}
+            className={
+              isForShopPage ? styles.addendQuantity : styles.totalQuantity
+            }
+            type="number"
+            value={isForShopPage ? addendQuantity : totalQuantity}
+            min="1"
+            onChange={
+              isForShopPage
+                ? handleAddendQuantityOnChange
+                : handleTotalQuantityOnChange
+            }
+          />
+        </label>
+      </div>
       {isForShopPage ? (
-        <button onClick={handleAddToCartClick}>Add to Cart</button>
+        <button
+          onClick={handleAddToCartClick}
+          className={styles.addToCartButton}
+        >
+          Add to Cart
+        </button>
       ) : (
-        <button onClick={handleRemoveFromCartClick}>Remove</button>
+        <button
+          onClick={handleRemoveFromCartClick}
+          className={styles.removeButton}
+        >
+          Remove
+        </button>
       )}
     </div>
   );

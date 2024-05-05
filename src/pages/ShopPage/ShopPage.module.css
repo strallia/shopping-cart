@@ -1,0 +1,7 @@
+.container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  background-color: var(--light-purple);
+}
