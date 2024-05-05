@@ -41,7 +41,8 @@ const ShopItem = ({ item, setItemsData, isForShopPage = false }) => {
       <label>
         Quantity:
         <input
-          id={isForShopPage ? "addend-quantity" : "total-quantity"}
+          id={id}
+          className={isForShopPage ? "addend-quantity" : "total-quantity"}
           type="number"
           value={isForShopPage ? addendQuantity : totalQuantity}
           min="1"
