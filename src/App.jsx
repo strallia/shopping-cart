@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <div>
-      <Header />
+      <Header itemsData={itemsData} />
       <Outlet context={{ itemsData, setItemsData, hasFetchError, loading }} />
     </div>
   );

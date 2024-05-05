@@ -8,11 +8,15 @@
 
 .count {
   position: absolute;
+  min-width: 15px;
   top: 5px;
   left: 13px;
-  font-size: 12px;
+  font-size: 10px;
   background-color: red;
-  padding: 2px 5px;
+  padding: 3px;
   border-radius: 50%;
   color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
 }
