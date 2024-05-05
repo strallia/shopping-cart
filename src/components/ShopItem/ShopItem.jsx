@@ -6,6 +6,14 @@ const ShopItem = ({ item, setItemsData, isForShopPage = false }) => {
   const [totalQuantity, setTotalQuantity] = useState(item.quantity);
   const { id, image, title, price, description, quantity } = item;
 
+  const setItemQuantityValue = (newQuantity) => {
+    setItemsData((items) => {
+      return items.map((item) =>
+        item.id === id ? { ...item, quantity: newQuantity } : item
+      );
+    });
+  };
+
   const handleAddendQuantityOnChange = (e) => {
     setAddendQuantity(+e.target.value);
   };
@@ -13,28 +21,16 @@ const ShopItem = ({ item, setItemsData, isForShopPage = false }) => {
   const handleTotalQuantityOnChange = (e) => {
     const updatedTotalQuantity = +e.target.value;
     setTotalQuantity(updatedTotalQuantity);
-    setItemsData((items) => {
-      return items.map((item) =>
-        item.id === id ? { ...item, quantity: updatedTotalQuantity } : item
-      );
-    });
+    setItemQuantityValue(updatedTotalQuantity);
   };
 
   const handleAddToCartClick = () => {
-    setItemsData((items) => {
-      return items.map((item) =>
-        item.id === id ? { ...item, quantity: quantity + addendQuantity } : item
-      );
-    });
     setAddendQuantity(1);
+    setItemQuantityValue(quantity + addendQuantity);
   };
 
   const handleRemoveFromCartClick = () => {
-    setItemsData((items) => {
-      return items.map((item) =>
-        item.id === id ? { ...item, quantity: 0 } : item
-      );
-    });
+    setItemQuantityValue(0);
   };
 
   return (
