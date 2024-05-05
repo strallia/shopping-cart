@@ -28,6 +28,11 @@
   font-weight: bold;
 }
 
+.price {
+  width: max-content;
+  margin-right: 10px;
+}
+
 .description {
   font-size: 0.8rem;
 }

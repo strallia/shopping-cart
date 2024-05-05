@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header/Header";
 import { useEffect, useState } from "react";
+import styles from "./App.module.css";
 
 const App = () => {
   const [itemsData, setItemsData] = useState(null);
@@ -26,7 +27,7 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       <Header itemsData={itemsData} />
       <Outlet context={{ itemsData, setItemsData, hasFetchError, loading }} />
     </div>

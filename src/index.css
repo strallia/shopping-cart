@@ -13,3 +13,7 @@
   --pale-yellow: rgb(255, 237, 189);
   --green: rgb(172, 240, 172);
 }
+
+#root {
+  height: 100vh;
+}
