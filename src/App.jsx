@@ -13,7 +13,12 @@ const App = () => {
         if (res.status >= 400) throw new Error("fetch error");
         return res.json();
       })
-      .then((json) => setItemsData(json))
+      .then((json) => {
+        const cartItems = json.map((item) => {
+          return { ...item, quantity: 0 };
+        });
+        setItemsData(cartItems);
+      })
       .catch((error) => setHasFetchError(error))
       .finally(() => setLoading(false));
   }, []);
@@ -21,7 +26,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Outlet context={{ itemsData, hasFetchError, loading }} />
+      <Outlet context={{ itemsData, setItemsData, hasFetchError, loading }} />
     </div>
   );
 };
