@@ -11,7 +11,12 @@ const ShopPage = () => {
   return (
     <div>
       {itemsData.map((item) => (
-        <ShopItem key={item.id} item={item} setItemsData={setItemsData} />
+        <ShopItem
+          key={item.id}
+          item={item}
+          setItemsData={setItemsData}
+          isForShopPage={true}
+        />
       ))}
     </div>
   );

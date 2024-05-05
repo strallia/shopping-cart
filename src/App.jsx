@@ -8,7 +8,9 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/category/jewelery")
+    fetch("https://fakestoreapi.com/products/category/jewelery", {
+      mode: "cors",
+    })
       .then((res) => {
         if (res.status >= 400) throw new Error("fetch error");
         return res.json();
