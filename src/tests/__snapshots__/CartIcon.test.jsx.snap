@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CartIcon component > renders correctly with cart image and count tracker 1`] = `
+<div>
+  <div
+    class="_container_3cc22e"
+  >
+    <img
+      class="_cart_3cc22e"
+      src="/src/assets/cart-icon.png"
+    />
+    <div
+      aria-label="cart total"
+      class="_count_3cc22e"
+      role="img"
+    />
+  </div>
+</div>
+`;

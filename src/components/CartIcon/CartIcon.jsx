@@ -6,7 +6,9 @@ const CartIcon = ({ totalItemsCount }) => {
   return (
     <div className={styles.container}>
       <img src={CartImage} className={styles.cart} />
-      <div className={styles.count}>{totalItemsCount}</div>
+      <div className={styles.count} aria-label="cart total" role="img">
+        {totalItemsCount}
+      </div>
     </div>
   );
 };
