@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import CartIcon from "../CartIcon/CartIcon";
+import Logo from "../../../public/flower-logo.png";
+
+import styles from "./Header.module.css";
 
 const Header = ({ itemsData }) => {
   let totalItemsCount = 0;
@@ -13,7 +16,7 @@ const Header = ({ itemsData }) => {
 
   return (
     <header style={{ backgroundColor: "cornflowerblue" }}>
-      (LOGO)
+      <img src={Logo} className={styles.logo} />
       <nav>
         <Link to="home">Home</Link>
         <Link to="shop">Shop</Link>
