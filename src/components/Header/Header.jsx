@@ -15,14 +15,15 @@ const Header = ({ itemsData }) => {
   }
 
   return (
-    <header style={{ backgroundColor: "cornflowerblue" }}>
+    <header className={styles.header}>
       <img src={Logo} className={styles.logo} />
-      <nav>
+      <nav className={styles.navLinks}>
         <Link to="home">Home</Link>
         <Link to="shop">Shop</Link>
-        <Link to="cart">Cart</Link>
+        <Link to="cart">
+          <CartIcon totalItemsCount={totalItemsCount} />
+        </Link>
       </nav>
-      <CartIcon totalItemsCount={totalItemsCount} />
     </header>
   );
 };
