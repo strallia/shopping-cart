@@ -4,12 +4,12 @@ import styles from "./CartIcon.module.css";
 
 const CartIcon = ({ totalItemsCount }) => {
   return (
-    <div className={styles.container}>
+    <button className={styles.container} aria-label="cart button">
       <img src={CartImage} className={styles.cart} />
       <div className={styles.count} aria-label="cart total" role="img">
         {totalItemsCount}
       </div>
-    </div>
+    </button>
   );
 };
 

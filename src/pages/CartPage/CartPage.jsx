@@ -8,13 +8,13 @@ const CartPage = () => {
     : null;
 
   return (
-    <div>
+    <main aria-label="cart page">
       <p>Your Cart</p>
       {itemsInCart &&
         itemsInCart.map((item) => (
           <ShopItem key={item.id} item={item} setItemsData={setItemsData} />
         ))}
-    </div>
+    </main>
   );
 };
 

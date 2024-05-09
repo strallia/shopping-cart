@@ -6,11 +6,12 @@ const ShopPage = () => {
   const { itemsData, setItemsData, hasFetchError, loading } =
     useOutletContext();
 
-  if (loading) return <p>LOADING...</p>;
-  if (hasFetchError) return <p>fetch error, oh no!</p>;
+  if (loading) return <main aria-label="shop page loading">LOADING...</main>;
+  if (hasFetchError)
+    return <main aria-label="shop page error">fetch error, oh no!</main>;
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container} aria-label="shop page">
       {itemsData.map((item) => (
         <ShopItem
           key={item.id}
@@ -19,7 +20,7 @@ const ShopPage = () => {
           isForShopPage={true}
         />
       ))}
-    </div>
+    </main>
   );
 };
 

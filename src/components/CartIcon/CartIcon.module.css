@@ -1,5 +1,7 @@
 .container {
   position: relative;
+  border: none;
+  background-color: transparent;
 }
 
 .cart {

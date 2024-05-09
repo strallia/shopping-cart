@@ -16,11 +16,15 @@ const Header = ({ itemsData }) => {
 
   return (
     <header className={styles.header}>
-      <img src={Logo} className={styles.logo} />
+      <img src={Logo} className={styles.logo} aria-label="logo" />
       <nav className={styles.navLinks}>
-        <Link to="home">Home</Link>
-        <Link to="shop">Shop</Link>
-        <Link to="cart">
+        <Link to="home" aria-label="home">
+          Home
+        </Link>
+        <Link to="shop" aria-label="shop">
+          Shop
+        </Link>
+        <Link to="cart" aria-label="cart">
           <CartIcon totalItemsCount={totalItemsCount} />
         </Link>
       </nav>

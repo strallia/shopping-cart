@@ -1,24 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App.jsx";
-import HomePage from "./pages/HomePage/HomePage.jsx";
-import ShopPage from "./pages/ShopPage/ShopPage.jsx";
-import CartPage from "./pages/CartPage/CartPage.jsx";
+import routes from "./utils/routes";
 import "./index.css";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      { index: true, element: <HomePage /> },
-      { path: "home", element: <HomePage /> },
-      { path: "shop", element: <ShopPage /> },
-      { path: "cart", element: <CartPage /> },
-    ],
-  },
-]);
+const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

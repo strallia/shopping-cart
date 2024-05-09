@@ -2,7 +2,8 @@
 
 exports[`CartIcon component > renders correctly with cart image and count tracker 1`] = `
 <div>
-  <div
+  <button
+    aria-label="cart button"
     class="_container_3cc22e"
   >
     <img
@@ -14,6 +15,6 @@ exports[`CartIcon component > renders correctly with cart image and count tracke
       class="_count_3cc22e"
       role="img"
     />
-  </div>
+  </button>
 </div>
 `;
