@@ -15,14 +15,26 @@ const ShopItem = ({ item, setItemsData, isForShopPage = false }) => {
     });
   };
 
-  const handleAddendQuantityOnChange = (e) => {
-    setAddendQuantity(+e.target.value);
+  const handleIncreaseQtyClick = () => {
+    if (isForShopPage) {
+      setAddendQuantity((prevQty) => prevQty + 1);
+    } else {
+      const updatedTotalQuantity = totalQuantity + 1;
+      setTotalQuantity(updatedTotalQuantity);
+      setItemQuantityValue(updatedTotalQuantity);
+    }
   };
 
-  const handleTotalQuantityOnChange = (e) => {
-    const updatedTotalQuantity = +e.target.value;
-    setTotalQuantity(updatedTotalQuantity);
-    setItemQuantityValue(updatedTotalQuantity);
+  const handleDecreaseQtyClick = () => {
+    if (isForShopPage) {
+      setAddendQuantity((prevQty) => {
+        return prevQty - 1 !== 0 ? prevQty - 1 : prevQty;
+      });
+    } else {
+      const updatedTotalQuantity = totalQuantity - 1;
+      setTotalQuantity(updatedTotalQuantity);
+      setItemQuantityValue(updatedTotalQuantity);
+    }
   };
 
   const handleAddToCartClick = () => {
@@ -42,21 +54,22 @@ const ShopItem = ({ item, setItemsData, isForShopPage = false }) => {
       <div className={styles.priceQuantityContainer}>
         <p className={styles.price}>$ {price}</p>
         <label className={styles.quantityLabel}>
-          Quantity:
-          <input
-            id={id}
-            className={
-              isForShopPage ? styles.addendQuantity : styles.totalQuantity
-            }
-            type="number"
-            value={isForShopPage ? addendQuantity : totalQuantity}
-            min="1"
-            onChange={
-              isForShopPage
-                ? handleAddendQuantityOnChange
-                : handleTotalQuantityOnChange
-            }
-          />
+          Qty:
+          <p aria-label="quantity">
+            {isForShopPage ? addendQuantity : totalQuantity}
+          </p>
+          <div className={styles.quantityButtons}>
+            <button
+              onClick={handleIncreaseQtyClick}
+              className={styles.upArrow}
+              aria-label="increase quantity"
+            />
+            <button
+              onClick={handleDecreaseQtyClick}
+              className={styles.downArrow}
+              aria-label="decrease quantity"
+            />
+          </div>
         </label>
       </div>
       {isForShopPage ? (

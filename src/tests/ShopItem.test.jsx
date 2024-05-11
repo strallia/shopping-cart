@@ -4,24 +4,36 @@ import { vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 describe("ShopItem on ShopPage", () => {
-  const props = {
-    item: {
-      id: 0,
-      image: "url",
-      title: "title",
-      price: 123,
-      description: "description",
-      quantity: 0,
-    },
-    setItemsData: vi.fn(),
-    isForShopPage: true,
-  };
   it("renders an item with title, description, quantity, price, and add to cart button", () => {
+    const props = {
+      item: {
+        id: 0,
+        image: "url",
+        title: "title",
+        price: 123,
+        description: "description",
+        quantity: 0,
+      },
+      setItemsData: vi.fn(),
+      isForShopPage: true,
+    };
     const { container } = render(<ShopItem {...props} />);
     expect(container).toMatchSnapshot();
   });
 
   it("calls setItemsData when add-to-cart button is clicked", async () => {
+    const props = {
+      item: {
+        id: 0,
+        image: "url",
+        title: "title",
+        price: 123,
+        description: "description",
+        quantity: 0,
+      },
+      setItemsData: vi.fn(),
+      isForShopPage: true,
+    };
     const setItemsData = vi.fn();
     const user = userEvent.setup();
     render(<ShopItem {...props} setItemsData={setItemsData} />);
@@ -31,18 +43,68 @@ describe("ShopItem on ShopPage", () => {
   });
 
   it("clicking add-to-cart button resets quantity value to 1", async () => {
+    const props = {
+      item: {
+        id: 0,
+        image: "url",
+        title: "title",
+        price: 123,
+        description: "description",
+        quantity: 0,
+      },
+      setItemsData: vi.fn(),
+      isForShopPage: true,
+    };
     const user = userEvent.setup();
     render(<ShopItem {...props} />);
     const addToCartBtn = screen.getByRole("button", { name: "Add to Cart" });
-    const quantityValue = screen.getByRole("spinbutton", { name: "Quantity:" });
+    const quantityValue = screen.getByRole("paragraph", { name: "quantity" });
     await user.click(addToCartBtn);
-    expect(quantityValue.value).toBe("1");
+    expect(quantityValue.textContent).toBe("1");
   });
 
   it("renders default quantity value of 1 on mount", () => {
+    const props = {
+      item: {
+        id: 0,
+        image: "url",
+        title: "title",
+        price: 123,
+        description: "description",
+        quantity: 0,
+      },
+      setItemsData: vi.fn(),
+      isForShopPage: true,
+    };
     render(<ShopItem {...props} />);
-    const quantityValue = screen.getByRole("spinbutton", { name: "Quantity:" });
-    expect(quantityValue.value).toBe("1");
+    const quantityValue = screen.getByRole("paragraph", { name: "quantity" });
+    expect(quantityValue.textContent).toBe("1");
+  });
+
+  it("quantity cannot be <= 0", async () => {
+    const props = {
+      item: {
+        id: 0,
+        image: "url",
+        title: "title",
+        price: 123,
+        description: "description",
+        quantity: 0,
+      },
+      setItemsData: vi.fn(),
+      isForShopPage: true,
+    };
+    const user = userEvent.setup();
+    render(<ShopItem {...props} />);
+    const quantityValue = screen.getByRole("paragraph", {
+      name: "quantity",
+    });
+    const decreaseBtn = screen.getByRole("button", {
+      name: "decrease quantity",
+    });
+    expect(quantityValue.textContent).toBe("1");
+    await user.click(decreaseBtn);
+    expect(quantityValue.textContent).toBe("1");
   });
 });
 
@@ -78,8 +140,8 @@ describe("ShopItem on CartPage", () => {
       isForShopPage: false,
     };
     render(<ShopItem {...props} />);
-    const quantity = screen.getByRole("spinbutton", { name: "Quantity:" });
-    expect(quantity.value).toBe("2");
+    const quantityValue = screen.getByRole("paragraph", { name: "quantity" });
+    expect(quantityValue.textContent).toBe("2");
   });
 
   it("calls setItemsData when remove button is clicked", async () => {
@@ -101,5 +163,59 @@ describe("ShopItem on CartPage", () => {
     const removeBtn = screen.getByRole("button", { name: "Remove" });
     await user.click(removeBtn);
     expect(setItemsData).toHaveBeenCalled();
+  });
+
+  it("clicking decrease quantity button decreases quantity by one", async () => {
+    const props = {
+      item: {
+        id: 0,
+        image: "url",
+        title: "title",
+        price: 123,
+        description: "description",
+        quantity: 2,
+      },
+      setItemsData: vi.fn(),
+      isForShopPage: false,
+    };
+    const user = userEvent.setup();
+    render(<ShopItem {...props} />);
+    const quantityValue = screen.getByRole("paragraph", {
+      name: "quantity",
+    });
+    const decreaseBtn = screen.getByRole("button", {
+      name: "decrease quantity",
+    });
+    expect(quantityValue.textContent).toBe("2");
+    await user.click(decreaseBtn);
+    expect(quantityValue.textContent).toBe("1");
+  });
+});
+
+describe("Shared ShopItem features for ShopPage and CartPage", () => {
+  it("clicking increase quantity button increases quantity by one", async () => {
+    const props = {
+      item: {
+        id: 0,
+        image: "url",
+        title: "title",
+        price: 123,
+        description: "description",
+        quantity: 0,
+      },
+      setItemsData: vi.fn(),
+      isForShopPage: true,
+    };
+    const user = userEvent.setup();
+    render(<ShopItem {...props} />);
+    const quantityValue = screen.getByRole("paragraph", {
+      name: "quantity",
+    });
+    const increaseBtn = screen.getByRole("button", {
+      name: "increase quantity",
+    });
+    expect(quantityValue.textContent).toBe("1");
+    await user.click(increaseBtn);
+    expect(quantityValue.textContent).toBe("2");
   });
 });

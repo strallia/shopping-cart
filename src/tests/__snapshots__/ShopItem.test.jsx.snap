@@ -26,14 +26,24 @@ exports[`ShopItem on CartPage > renders an item with title, quantity, price, and
       <label
         class="_quantityLabel_859760"
       >
-        Quantity:
-        <input
-          class="_totalQuantity_859760"
-          id="0"
-          min="1"
-          type="number"
-          value="0"
-        />
+        Qty:
+        <p
+          aria-label="quantity"
+        >
+          0
+        </p>
+        <div
+          class="_quantityButtons_859760"
+        >
+          <button
+            aria-label="increase quantity"
+            class="_upArrow_859760"
+          />
+          <button
+            aria-label="decrease quantity"
+            class="_downArrow_859760"
+          />
+        </div>
       </label>
     </div>
     <button
@@ -76,14 +86,24 @@ exports[`ShopItem on ShopPage > renders an item with title, description, quantit
       <label
         class="_quantityLabel_859760"
       >
-        Quantity:
-        <input
-          class="_addendQuantity_859760"
-          id="0"
-          min="1"
-          type="number"
-          value="1"
-        />
+        Qty:
+        <p
+          aria-label="quantity"
+        >
+          1
+        </p>
+        <div
+          class="_quantityButtons_859760"
+        >
+          <button
+            aria-label="increase quantity"
+            class="_upArrow_859760"
+          />
+          <button
+            aria-label="decrease quantity"
+            class="_downArrow_859760"
+          />
+        </div>
       </label>
     </div>
     <button
