@@ -19,7 +19,7 @@
 
 .title {
   text-align: center;
-  color: var(--dark-purple);
+  color: var(--dark-green);
 }
 
 .title,
@@ -71,11 +71,11 @@
   border: 2px solid black;
   box-shadow: 3px 3px 0 0 black;
   transition: all 0.1s ease-out;
-  background-color: var(--green);
+  background-color: var(--orange);
 }
 
 .addToCartButton:hover {
-  background-color: var(--orange);
+  background-color: var(--green);
 }
 
 .addToCartButton:active {

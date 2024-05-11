@@ -7,11 +7,11 @@
 :root {
   font-family: sans-serif;
   font-size: 16px;
-  --light-purple: rgb(162, 104, 217);
-  --dark-purple: rgb(111, 17, 199);
+  --light-purple: rgb(169, 149, 187);
+  --dark-green: rgb(206, 106, 0);
   --orange: rgb(244, 178, 85);
   --pale-yellow: rgb(255, 237, 189);
-  --green: rgb(172, 240, 172);
+  --green: rgb(182, 242, 182);
   --red: rgb(255, 0, 89);
 }
 
