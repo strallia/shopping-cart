@@ -48,7 +48,7 @@
   align-self: end;
 }
 
-.quantityLabel {
+.quantity {
   display: flex;
   gap: 15px;
   align-items: center;

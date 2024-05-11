@@ -1,0 +1,96 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ShopItem on CartPage > renders an item with title, quantity, price, and remove button 1`] = `
+<div>
+  <div
+    class="_container_859760"
+  >
+    <img
+      class="_image_859760"
+      src="url"
+    />
+    <p
+      class="_title_859760"
+    >
+      title
+    </p>
+    <div
+      class="_priceQuantityContainer_859760"
+    >
+      <p
+        class="_price_859760"
+      >
+        $ 
+        123
+      </p>
+      <label
+        class="_quantityLabel_859760"
+      >
+        Quantity:
+        <input
+          class="_totalQuantity_859760"
+          id="0"
+          min="1"
+          type="number"
+          value="0"
+        />
+      </label>
+    </div>
+    <button
+      class="_removeButton_859760"
+    >
+      Remove
+    </button>
+  </div>
+</div>
+`;
+
+exports[`ShopItem on ShopPage > renders an item with title, description, quantity, price, and add to cart button 1`] = `
+<div>
+  <div
+    class="_container_859760"
+  >
+    <img
+      class="_image_859760"
+      src="url"
+    />
+    <p
+      class="_title_859760"
+    >
+      title
+    </p>
+    <p
+      class="_description_859760"
+    >
+      description
+    </p>
+    <div
+      class="_priceQuantityContainer_859760"
+    >
+      <p
+        class="_price_859760"
+      >
+        $ 
+        123
+      </p>
+      <label
+        class="_quantityLabel_859760"
+      >
+        Quantity:
+        <input
+          class="_addendQuantity_859760"
+          id="0"
+          min="1"
+          type="number"
+          value="1"
+        />
+      </label>
+    </div>
+    <button
+      class="_addToCartButton_859760"
+    >
+      Add to Cart
+    </button>
+  </div>
+</div>
+`;
