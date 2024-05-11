@@ -27,7 +27,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.appContainer}>
       <Header itemsData={itemsData} />
       <Outlet context={{ itemsData, setItemsData, hasFetchError, loading }} />
     </div>
