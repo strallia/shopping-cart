@@ -3,18 +3,12 @@ import HeroImage from "../../assets/hero-image.jpg";
 import styles from "./HomePage.module.css";
 
 const HomePage = () => {
-  const handleShopNowClick = () => {
-    // change url to shop page
-  };
-
   return (
     <main aria-label="home page" className={styles.homePageLayout}>
       <Link to="/shop">
-        <button className={styles.shopNowButton} onClick={handleShopNowClick}>
-          Shop now
-        </button>
+        <button className={styles.shopNowButton}>Shop now</button>
       </Link>
-      <img className={styles.heroImage} src={HeroImage} />
+      <img className={styles.heroImage} src={HeroImage} alt="gold earrings" />
     </main>
   );
 };
