@@ -3,7 +3,9 @@
 exports[`ShopItem on CartPage > renders an item with title, quantity, price, and remove button 1`] = `
 <div>
   <div
+    aria-label="shop item"
     class="_container_859760"
+    role="figure"
   >
     <img
       class="_image_859760"
@@ -58,7 +60,9 @@ exports[`ShopItem on CartPage > renders an item with title, quantity, price, and
 exports[`ShopItem on ShopPage > renders an item with title, description, quantity, price, and add to cart button 1`] = `
 <div>
   <div
+    aria-label="shop item"
     class="_container_859760"
+    role="figure"
   >
     <img
       class="_image_859760"
