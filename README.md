@@ -1,6 +1,6 @@
 # Shopping Cart
 
-<!-- [Live Demo]() -->
+[Live Demo](https://majestic-medovik-dbda23.netlify.app/)
 
 ## Purpose
 
