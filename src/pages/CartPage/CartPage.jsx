@@ -11,6 +11,8 @@ const CartPage = () => {
     return subtotal + item.quantity * item.price;
   }, 0);
 
+  const handleCheckout = () => {};
+
   return (
     <main aria-label="cart page" className={styles.cartPageContainer}>
       <p className={styles.title} aria-label="your cart">
@@ -35,6 +37,7 @@ const CartPage = () => {
           <p className={styles.subtotal} aria-label="subtotal">
             Subtotal: ${subtotal}
           </p>
+          <button className="secondary-button">Checkout</button>
         </>
       )}
     </main>

@@ -1,3 +1,5 @@
+/* GLOBAL STYLES */
+
 * {
   margin: 0;
   padding: 0;
@@ -17,4 +19,48 @@
 
 #root {
   height: 10vh;
+}
+
+/* BUTTONS */
+.primary-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 0 10px black;
+}
+
+.primary-button:hover {
+  background-color: var(--light-purple);
+  position: absolute;
+}
+
+.secondary-button {
+  height: min-content;
+  cursor: pointer;
+  justify-self: center;
+  width: max-content;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: 2px solid black;
+  box-shadow: 3px 3px 0 0 black;
+  transition: all 0.1s ease-out;
+  background-color: var(--orange);
+  font-weight: bold;
+}
+
+.secondary-button:hover {
+  background-color: var(--green);
+}
+
+.secondary-button:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
 }

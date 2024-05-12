@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <main aria-label="home page" className={styles.homePageLayout}>
       <Link to="/shop">
-        <button className={styles.shopNowButton}>Shop now</button>
+        <button className="primary-button">Shop now</button>
       </Link>
       <img className={styles.heroImage} src={HeroImage} alt="gold earrings" />
     </main>

@@ -54,6 +54,8 @@ describe("CartPage component when have items in cart", () => {
       screen.getByRole("paragraph", { name: "subtotal" }).textContent
     ).toBe("Subtotal: $800");
   });
+
+  it("renders nonfunctional checkout button", () => {});
 });
 
 describe("CartPage component when no items in cart", () => {

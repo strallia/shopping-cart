@@ -73,16 +73,13 @@ const ShopItem = ({ item, setItemsData, isForShopPage = false }) => {
         </label>
       </div>
       {isForShopPage ? (
-        <button
-          onClick={handleAddToCartClick}
-          className={styles.addToCartButton}
-        >
+        <button onClick={handleAddToCartClick} className="secondary-button">
           Add to Cart
         </button>
       ) : (
         <button
           onClick={handleRemoveFromCartClick}
-          className={styles.removeButton}
+          className="secondary-button"
         >
           Remove
         </button>
