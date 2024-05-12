@@ -27,6 +27,5 @@
 
 .shopNowButton:hover {
   background-color: var(--light-purple);
-  color: white;
   position: absolute;
 }

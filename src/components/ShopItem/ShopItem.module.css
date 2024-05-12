@@ -97,7 +97,8 @@
   border: 2px solid black;
 }
 
-.addToCartButton {
+.addToCartButton,
+.removeButton {
   height: min-content;
   cursor: pointer;
   justify-self: center;
@@ -110,11 +111,13 @@
   background-color: var(--orange);
 }
 
-.addToCartButton:hover {
+.addToCartButton:hover,
+.removeButton:hover {
   background-color: var(--green);
 }
 
-.addToCartButton:active {
+.addToCartButton:active,
+.removeButton:active {
   transform: translate(3px, 3px);
   box-shadow: none;
 }

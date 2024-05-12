@@ -1,0 +1,28 @@
+.cartPageContainer {
+  display: grid;
+  padding: 20px 30px;
+  gap: 30px;
+  grid-template-rows: min-content min-content 1fr;
+  background-color: var(--light-purple);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cardsContainer {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 300px));
+  grid-template-rows: min-content;
+  gap: 30px;
+}
+
+.subtotal,
+.noItemsMessage {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
