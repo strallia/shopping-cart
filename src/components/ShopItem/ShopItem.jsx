@@ -47,7 +47,7 @@ const ShopItem = ({ item, setItemsData, isForShopPage = false }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} aria-label="shop item" role="figure">
       <img src={image} className={styles.image} />
       <p className={styles.title}>{title}</p>
       {isForShopPage && <p className={styles.description}>{description}</p>}
@@ -97,7 +97,7 @@ ShopItem.propTypes = {
     image: PropTypes.string,
     title: PropTypes.string,
     price: PropTypes.number,
-    description: PropTypes.string.isRequired,
+    description: PropTypes.string,
     quantity: PropTypes.number,
   }),
   setItemsData: PropTypes.func,

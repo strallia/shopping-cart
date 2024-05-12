@@ -13,9 +13,13 @@ const CartPage = () => {
 
   return (
     <main aria-label="cart page" className={styles.cartPageContainer}>
-      <p className={styles.title}>Your Cart</p>
+      <p className={styles.title} aria-label="your cart">
+        Your Cart
+      </p>
       {itemsInCart.length === 0 ? (
-        <p className={styles.noItemsMessage}>No items in cart</p>
+        <p className={styles.noItemsMessage} aria-label="no items">
+          No items in cart
+        </p>
       ) : (
         <>
           <div className={styles.cardsContainer}>
@@ -28,7 +32,9 @@ const CartPage = () => {
                 />
               ))}
           </div>
-          <p className={styles.subtotal}>Subtotal: ${subtotal}</p>
+          <p className={styles.subtotal} aria-label="subtotal">
+            Subtotal: ${subtotal}
+          </p>
         </>
       )}
     </main>
