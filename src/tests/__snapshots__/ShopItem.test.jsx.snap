@@ -49,7 +49,7 @@ exports[`ShopItem on CartPage > renders an item with title, quantity, price, and
       </label>
     </div>
     <button
-      class="_removeButton_859760"
+      class="secondary-button"
     >
       Remove
     </button>
@@ -111,7 +111,7 @@ exports[`ShopItem on ShopPage > renders an item with title, description, quantit
       </label>
     </div>
     <button
-      class="_addToCartButton_859760"
+      class="secondary-button"
     >
       Add to Cart
     </button>
