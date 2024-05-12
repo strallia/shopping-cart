@@ -55,7 +55,17 @@ describe("CartPage component when have items in cart", () => {
     ).toBe("Subtotal: $800");
   });
 
-  it("renders nonfunctional checkout button", () => {});
+  it("renders nonfunctional checkout button", () => {
+    const itemsData = [{ id: 0, quantity: 1, price: 200 }];
+    render(
+      <MockComponentWithOutletContext context={{ itemsData }}>
+        <CartPage />
+      </MockComponentWithOutletContext>
+    );
+    expect(
+      screen.getByRole("button", { name: /checkout/i })
+    ).toBeInTheDocument();
+  });
 });
 
 describe("CartPage component when no items in cart", () => {
