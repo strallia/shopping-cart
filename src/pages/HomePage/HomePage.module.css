@@ -1,6 +1,7 @@
 .homePageLayout {
   overflow: hidden;
   position: relative;
+  background-color: var(--pale-yellow);
 }
 
 .heroImage {
