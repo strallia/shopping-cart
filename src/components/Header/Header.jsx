@@ -15,7 +15,7 @@ const Header = ({ itemsData }) => {
   }
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} aria-label="header">
       <img src={Logo} className={styles.logo} aria-label="logo" />
       <nav className={styles.navLinks}>
         <Link to="home" aria-label="home">
